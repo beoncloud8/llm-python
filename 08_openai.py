@@ -1,32 +1,48 @@
 from dotenv import load_dotenv
+import os
 
 load_dotenv()
 
-import openai
+from openai import OpenAI
 import webbrowser
 
+# Initialize OpenAI client
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # list all models
-models = openai.Model.list()
-print(models.data[0].root)
-print(mod.root for mod in models.data)
+try:
+    models = client.models.list()
+    print(models.data[0].id)
+    print([model.id for model in models.data])
+except Exception as e:
+    print(f"Error listing models: {e}")
 
-# # create our completion
-# completion = openai.Completion.create(model="ada", prompt="Bill Gates is a")
-# print(completion.choices[0].text)
+# create our completion (modern syntax)
+try:
+    completion = client.completions.create(model="gpt-3.5-turbo-instruct", prompt="Bill Gates is a")
+    print(completion.choices[0].text)
+except Exception as e:
+    print(f"Error creating completion: {e}")
 
-# image_gen = openai.Image.create(prompt="Zwei Hunde spielen unter einem Baum, cartoon",
-#                                 n=2,
-#                                 size="512x512"
-#                             )
-# # imgurl1 = image_gen.data[0].url
-# # imgurl2 = image_gen.data[1].url
-# # webbrowser.open(imgurl)
-# for img in image_gen.data:
-#     webbrowser.open_new_tab(img.url)
+# image generation (modern syntax)
+try:
+    image_gen = client.images.generate(
+        prompt="Zwei Hunde spielen unter einem Baum, cartoon",
+        n=2,
+        size="512x512"
+    )
+    for img in image_gen.data:
+        webbrowser.open_new_tab(img.url)
+except Exception as e:
+    print(f"Error generating images: {e}")
 
-
-# # Gwendolyn Brooks Writers' Conference - Keynote Address: Dr. Donda West
-# audio = open("audio/donda.mp3", "rb")
-# transcript = openai.Audio.transcribe("whisper-1", audio)
-# print(transcript)
+# Audio transcription (modern syntax)
+try:
+    with open("audio/donda.mp3", "rb") as audio:
+        transcript = client.audio.transcriptions.create(
+            model="whisper-1", 
+            file=audio
+        )
+        print(transcript.text)
+except Exception as e:
+    print(f"Error transcribing audio: {e}")

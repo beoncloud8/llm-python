@@ -6,10 +6,10 @@ from agents import Agent, Runner, function_tool
 from dotenv import load_dotenv
 
 load_dotenv()
+
 SECTORS_API_KEY = os.getenv("SECTORS_API_KEY")
-
-
 headers = {"Authorization": SECTORS_API_KEY}
+
 def retrieve_from_endpoint(url: str) -> dict:
 
     try:
@@ -63,7 +63,9 @@ company_research_agent = Agent(
 )
 
 async def main():
-    query = "Tell me about the company listed on Singapore Exchange with ticker 'D05'."
+    # query = "List top 5 PB companies"
+    query = "Tell me the market_cap of a company listed on Singapore Exchange with ticker 'D05'."
+    # query = "Tell me about the company listed on Singapore Exchange with ticker 'D05'."
     result = await Runner.run(
         company_research_agent,
         query

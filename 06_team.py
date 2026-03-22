@@ -2,7 +2,8 @@
 from dotenv import load_dotenv
 load_dotenv()
 
-from llama_index import GPTVectorStoreIndex, TrafilaturaWebReader
+from llama_index.core import VectorStoreIndex
+from llama_index.core.readers import download_loader
 import chromadb
 
 
@@ -11,8 +12,9 @@ def create_embedding_store(name):
     return chroma_client.create_collection(name)
 
 def query_pages(collection, urls, questions):
+    TrafilaturaWebReader = download_loader("TrafilaturaWebReader")
     docs = TrafilaturaWebReader().load_data(urls)
-    index = GPTVectorStoreIndex.from_documents(docs, chroma_collection=collection)
+    index = VectorStoreIndex.from_documents(docs, chroma_collection=collection)
     query_engine = index.as_query_engine()
     for question in questions:
         print(f"Question: {question} \n")

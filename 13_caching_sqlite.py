@@ -1,22 +1,20 @@
 import time
 from dotenv import load_dotenv
 import langchain
-from langchain.llms import OpenAI
-from langchain.callbacks import get_openai_callback
+from langchain_openai import OpenAI
+from langchain_community.callbacks import get_openai_callback
 
-from langchain.text_splitter import CharacterTextSplitter
-from langchain.docstore.document import Document
-from langchain.cache import SQLiteCache
-from langchain.chains.summarize import load_summarize_chain
-
-# add this to .gitignore if you don't want to commit the cache
-langchain.llm_cache = SQLiteCache(database_path=".langchain.db")
+from langchain_text_splitters import CharacterTextSplitter
+from langchain_core.documents import Document
+from langchain_community.cache import SQLiteCache
 
 load_dotenv()
 
+# Configure cache for the specific LLM
+llm = OpenAI(model="gpt-3.5-turbo-instruct", cache=SQLiteCache(database_path=".langchain.db"))
+no_cache_llm = OpenAI(model="gpt-3.5-turbo-instruct", cache=None)
+
 text_splitter = CharacterTextSplitter()
-llm = OpenAI(model_name="text-davinci-002")
-no_cache_llm = OpenAI(model_name="text-davinci-002", cache=False)
 
 with open("news/summary.txt") as f:
     news = f.read()
@@ -26,11 +24,16 @@ print(texts)
 
 docs = [Document(page_content=t) for t in texts[:3]]
 
-chain = load_summarize_chain(llm, chain_type="map_reduce", reduce_llm=no_cache_llm)
+# Create a simple summarization chain using LCEL
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+
+summarize_prompt = ChatPromptTemplate.from_template("Summarize the following text:\n\n{text}")
+chain = summarize_prompt | llm | StrOutputParser()
 
 with get_openai_callback() as cb:
     start = time.time()
-    result = chain.run(docs)
+    result = chain.invoke({"text": "\n".join([doc.page_content for doc in docs])})
     end = time.time()
     print("--- result1")
     print(result)
@@ -39,7 +42,7 @@ with get_openai_callback() as cb:
 
 with get_openai_callback() as cb2:
     start = time.time()
-    result = chain.run(docs)
+    result = chain.invoke({"text": "\n".join([doc.page_content for doc in docs])})
     end = time.time()
     print("--- result2")
     print(result)

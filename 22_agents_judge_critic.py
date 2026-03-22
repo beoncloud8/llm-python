@@ -17,6 +17,7 @@ from dotenv import load_dotenv
 import asyncio
 from dataclasses import dataclass
 from typing import Literal
+import json
 
 from agents import Agent, ItemHelpers, Runner, TResponseInputItem, trace, function_tool
 
@@ -30,7 +31,7 @@ def read_company_data_from_txt() -> str:
     try:
         with open("3_research_notes.txt", "r") as file:
             data = file.read()
-            print(data)
+            # print(data)
             return data
     except FileNotFoundError:
         return "File not found. Please ensure the file exists."
@@ -41,8 +42,10 @@ read_company_data_from_txt = Agent(
     name="read_company_data_from_txt",
     instructions=(
         "Given a company name or ticker by the user, read the company data from the text file 3_research_notes.txt"
-        "Summarize them into 2-3 paragraphs and be informative so it reads like a professional report."
+        "Find the specific company section that matches the user's request (e.g., if user asks for 'BBCA', find the BBCA section only)."
+        "Summarize ONLY that specific company into 2-3 paragraphs and be informative so it reads like a professional report."
         "If there is any feedback, incorporate them to improve the report. If the ticker is not found, say so."
+        "DO NOT summarize other companies - focus only on the requested company."
     ),
     tools=[read_company_data_from_txt],
 )
@@ -57,13 +60,33 @@ evaluator = Agent[None](
     name="evaluator",
     instructions=(
         "You evaluate a stock overview summary and decide if it's good enough."
-        "If it's not good enough, you provide feedback on what needs to be improved."
+        "Evaluate based on these criteria:\n"
+        "1. **Content Quality**: Contains key financial metrics, business model, and market position from source data\n"
+        "2. **Clarity**: Well-structured, professional language, easy to understand\n"
+        "3. **Completeness**: Covers company overview, financial performance, and market position using available data\n"
+        "4. **Accuracy**: Information aligns with source data from research notes\n"
+        "5. **Length**: 2-3 paragraphs as requested, not too brief or verbose\n"
+        "6. **Professional Tone**: Reads like a professional investment summary\n"
+        "\n"
+        "Give 'pass' only if ALL criteria are met. Focus on what's available in the source data."
         "Never give it a pass on the first try, but be increasingly generous so its chance of passing increases over time."
     ),
     output_type=EvaluationFeedback,
 )
 
 async def main() -> None:
+    """
+    Runs the summarizer agent and evaluates the output iteratively.
+    
+    The summarizer generates a company summary, and the evaluator scores it.
+    If the score is 'fail', feedback is appended and the summarizer tries again.
+    This repeats until the summary passes or max_attempts is reached.
+
+    Args:
+        input_items: Initial list of input messages (conversation history).
+        max_attempts: Maximum number of summarization attempts (default: 3).
+    """
+
     msg = input("🤖: What company are you interested in? \n👧: ")
     input_items: list[TResponseInputItem] = [{"content": msg, "role": "user"}]
 
@@ -71,31 +94,69 @@ async def main() -> None:
 
     # We'll run the entire workflow in a single trace
     with trace("LLM as a judge"):
+        max_attempts = 5
+        attempt = 0
         while True:
+            attempt += 1
+            if attempt > max_attempts:
+                print(f"Reached maximum attempts ({max_attempts}). Exiting with current summary.")
+                break
+            
+            # Adjust judge strictness based on attempt number
+            if attempt >= 3:
+                evaluator.instructions = (
+                    "You evaluate a stock overview summary and decide if it's good enough."
+                    "Be more generous now - if the summary covers key metrics, is well-structured, and reads professionally, give it a pass."
+                    "Focus on overall quality rather than minor imperfections."
+                )
+            
+            # ── Step 1: Run the Summarizer Agent ──────────────────────────
             summarized_results = await Runner.run(
                 read_company_data_from_txt,
                 input_items,
             )
 
+            # Update input_items to include summarizer's response (for chaining)
             input_items = summarized_results.to_input_list()
+            
+            # Extract the plain-text summary from the summarizer output
             summary = ItemHelpers.text_message_outputs(summarized_results.new_items)
-            print("Stock overview summary generated")
+            print(f"\n📝 ITERATION {attempt} SUMMARY:")
+            print("-" * 50)
+            print(summary)
+            print("-" * 50)
 
+            # ── Step 2: Run the Evaluator Agent ───────────────────────────
             evaluator_result = await Runner.run(evaluator, input_items)
             result: EvaluationFeedback = evaluator_result.final_output
 
             print(f"Evaluator score: {result.score}")
+            print(f"Evaluator feedback: {result.feedback}")
 
+            # ── Step 3: Check Evaluation Result ───────────────────────────
             if result.score == "pass":
                 print("The stock summary is 💡 good enough, exiting.")
                 break
-
+            
+            # If not passing and attempts remain, attach feedback for next round
             print("Re-running with feedback")
+            input_items.append({
+                "content": f"Feedback: {result.feedback}", 
+                "role": "user"
+            })
 
-            input_items.append({"content": f"Feedback: {result.feedback}", "role": "user"})
-
+    # ── Final Output ──────────────────────────────────────────────────────
     print(f"Final Summary: {summary}")
-    print("Input items:", input_items)
+    print("\n" + "="*60)
+    print("FINAL INVESTMENT SUMMARY")
+    print("="*60)
+    print(summary)
+    print("="*60)
+    
+    # Optional: Show detailed debug info in a separate file
+    with open("debug_output.json", "w") as f:
+        json.dump(input_items, f, indent=2, ensure_ascii=False)
+    print("Debug info saved to debug_output.json")
 
 
 if __name__ == "__main__":

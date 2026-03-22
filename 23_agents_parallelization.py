@@ -82,7 +82,6 @@ research_team_leader_aggregator = Agent(
 )
 
 
-
 async def main():
     input_prompt = input(f"🤖: I'm a financial report research analyst. Enter a stock ticker on IDX to begin. \n👧: ")
     

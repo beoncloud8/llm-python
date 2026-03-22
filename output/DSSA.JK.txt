@@ -1,0 +1,53 @@
+# Research Note for DSSA.JK
+
+Company Overview: Dian Swastatika Sentosa Tbk (DSSA.JK)
+
+- Exchange/Board: IDX / Main
+- Sector: Energy | Sub-sector: Oil, Gas & Coal
+- Industry: Coal | Sub-industry: Coal Production
+- Market capitalization: IDR 597,563,324,160,000 (rank: 3)
+- Employees: 1,424
+- Affiliates: Sinarmas
+- Indices: JII70; KOMPAS100; LQ45
+
+Listing & Contact
+- Listing date: 2009-12-10
+- Address: Gedung Sinar Mas Land Plaza, Menara 2, Lantai 24, Jl. M.H. Thamrin No. 51, Gondangdia, Menteng, Kota Adm. Jakarta Pusat, DKI Jakarta,10350
+- Website: www.dssa.co.id | Phone: +62 21-31990258 | Email: corsec@dss.co.id
+
+Price & Performance (latest)
+- Last close: IDR 77,550 on 2026-03-10 (+5.94% d/d)
+- 90-day range: Low 69,125 (2026-03-09); High 116,000 (2026-01-27)
+- 52-week range: Low 36,400 (2025-04-08); High 118,000 (2025-10-16)
+- YTD range: Low 69,125 (2026-03-09); High 116,000 (2026-01-27)
+- All-time: Low 165 (2009-12-10); High 118,000 (2025-10-16)
+
+ESG & Other
+- ESG score: N/A
+- Tags: 90-d-low; public-float-under-25; top-20-institution-buying; ytd-low
+
+# Research Note for DSSA.JK
+
+Dian Swastatika Sentosa Tbk (DSSA.JK)
+Sector: Energy | Sub-sector: Oil, Gas & Coal | Industry: Coal | Sub-industry: Coal Production
+Listing board: Main | Listing date: 2009-12-10
+Market cap: 597,563,324,160,000 IDR (Rank: 3)
+Employees: 1,424
+Address: Gedung Sinar Mas Land Plaza, Menara 2, Lantai 24, Jl. M.H. Thamrin No. 51, Gondangdia, Menteng, Kota Adm. Jakarta Pusat, DKI Jakarta,10350
+Website: www.dssa.co.id | Phone: 021-31990258 | Email: corsec@dss.co.id
+Affiliates: Sinarmas | Indices: JII70, KOMPAS100, LQ45
+
+Latest price data (as of 2026-03-10):
+- Last close: 77,550 IDR
+- Daily change: +5.94%
+
+Price extremes:
+- YTD high: 116,000 (2026-01-27) | YTD low: 69,125 (2026-03-09)
+- 52-week high: 118,000 (2025-10-16) | 52-week low: 36,400 (2025-04-08)
+- All-time high: 118,000 (2025-10-16) | All-time low: 165 (2009-12-10)
+
+Tags: 90-d-low, public-float-under-25, top-20-institution-buying, ytd-low
+
+Notes:
+- DSSA is part of the Sinarmas group and features in major Indonesian indices (LQ45, KOMPAS100, JII70).
+- Business focus centers on coal mining/production and broader energy activities. Consider monitoring coal price trends, regulatory developments, and group-related strategic moves.

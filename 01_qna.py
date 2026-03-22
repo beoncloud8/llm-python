@@ -1,17 +1,18 @@
 from dotenv import load_dotenv
 
-from langchain.document_loaders import DirectoryLoader, TextLoader
-from langchain.text_splitter import CharacterTextSplitter
-from langchain.embeddings import OpenAIEmbeddings
-from langchain.vectorstores import Chroma
-from langchain.chains import RetrievalQA
-from langchain import OpenAI
+from langchain_community.document_loaders import TextLoader
+from langchain_text_splitters import CharacterTextSplitter
+from langchain_openai import OpenAIEmbeddings
+from langchain_community.vectorstores import InMemoryVectorStore
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.prompts import PromptTemplate
+from langchain_core.runnables import RunnablePassthrough
+from langchain_openai import OpenAI
 
 load_dotenv()
 embeddings = OpenAIEmbeddings()
 
-# loader = TextLoader('news/summary.txt')
-loader = DirectoryLoader('news', glob="**/*.txt")
+loader = TextLoader('news/result.txt')
 
 documents = loader.load()
 print(len(documents))
@@ -19,16 +20,28 @@ text_splitter = CharacterTextSplitter(chunk_size=2500, chunk_overlap=0)
 texts = text_splitter.split_documents(documents)
 # print(texts)
 
-docsearch = Chroma.from_documents(texts, embeddings)
-qa = RetrievalQA.from_chain_type(
-    llm=OpenAI(), 
-    chain_type="stuff", 
-    retriever=docsearch.as_retriever()
+docsearch = InMemoryVectorStore.from_documents(texts, embeddings)
+template = """Use the following pieces of context to answer the question at the end.
+If you don't know the answer, just say that you don't know, don't try to make up an answer.
+Keep the answer concise and relevant to the question.
+
+Context: {context}
+
+Question: {question}
+
+Helpful Answer:"""
+prompt = PromptTemplate.from_template(template)
+
+qa_chain = (
+    {"context": docsearch.as_retriever(), "question": RunnablePassthrough()}
+    | prompt
+    | OpenAI()
+    | StrOutputParser()
 )
 
 def query(q):
     print("Query: ", q)
-    print("Answer: ", qa.run(q))
+    print("Answer: ", qa_chain.invoke(q))
 
 query("What are the effects of legislations surrounding emissions on the Australia coal market?")
 query("What are China's plans with renewable energy?")

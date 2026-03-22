@@ -1,33 +1,33 @@
 from dotenv import load_dotenv
-from langchain import HuggingFaceHub, LLMChain
-from langchain.prompts import PromptTemplate
+from langchain_huggingface import HuggingFaceEndpoint
+from langchain_core.prompts import PromptTemplate
 
 load_dotenv()
 
-# hub_llm = HuggingFaceHub(repo_id="mrm8488/t5-base-finetuned-wikiSQL")
+hub_llm = HuggingFaceEndpoint(repo_id="mrm8488/t5-base-finetuned-wikiSQL")
 
-# prompt = PromptTemplate(
-#     input_variables=["question"],
-#     template="Translate English to SQL: {question}"    
+# prompt = PromptTemplate.from_template(
+#     "Translate English to SQL: {question}"    
 # )
 
-# hub_chain = LLMChain(prompt=prompt, llm=hub_llm, verbose=True)
-# print(hub_chain.run("What is the average age of the respondents using a mobile device?"))
+# result = hub_llm.invoke(prompt.format(question="What is the average age of the respondents using a mobile device?"))
+# print(result)
 
 
 # second example below:
-hub_llm = HuggingFaceHub(
-    repo_id='gpt2',
-    model_kwargs={'temperature': 0.7, 'max_length': 100}
+hub_llm = HuggingFaceEndpoint(
+    repo_id='distilgpt2',
+    task="text-generation",
+    temperature=0.7,
+    max_new_tokens=100
 )
 
-prompt = PromptTemplate(
-    input_variables=["profession"],
-    template="You had one job 😡! You're the {profession} and you didn't have to be sarcastic"
+prompt = PromptTemplate.from_template(
+    "You had one job ! You're the {profession} and you didn't have to be sarcastic"
 )
 
-hub_chain = LLMChain(prompt=prompt, llm=hub_llm, verbose=True)
-print(hub_chain.run("customer service agent"))
-print(hub_chain.run("politician"))
-print(hub_chain.run("Fintech CEO"))
-print(hub_chain.run("insurance agent"))
+# Direct invocation with HuggingFaceEndpoint
+print(hub_llm.invoke(prompt.format(profession="customer service agent")))
+print(hub_llm.invoke(prompt.format(profession="politician")))
+print(hub_llm.invoke(prompt.format(profession="Fintech CEO")))
+print(hub_llm.invoke(prompt.format(profession="insurance agent")))

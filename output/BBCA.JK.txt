@@ -1,0 +1,44 @@
+# Research Note for BBCA.JK
+
+PT Bank Central Asia Tbk. (BBCA.JK) - Company Overview
+
+Exchange: Indonesia Stock Exchange (IDX) | Listing Board: Main
+Sector: Financials | Industry: Banks | Sub-industry: Banks
+Market capitalization: IDR 851,245,039,012,500 (Market cap rank: 2)
+
+Headquarters address:
+Menara BCA, Grand Indonesia
+Jalan MH Thamrin No. 1
+Jakarta 10310
+
+Employees: 27,937
+Listing date: 2000-05-31
+Website: www.bca.co.id
+Phone: 021-23588000
+Email: investor_relations@bca.co.id
+
+Price and performance
+- Last close: IDR 6,975 on 2026-03-10 (+1.45% day-over-day)
+- 52-week range: IDR 6,375 – 9,800
+- YTD: High 8,175 (2026-01-06), Low 6,375 (2026-01-29)
+- 90-day: High 8,375 (2025-12-16), Low 6,375 (2026-01-29)
+- All-time: High 10,950 (2024-09-23), Low 175 (2004-06-08)
+
+ESG score: 21.44
+Indices: FTSE, IDXESGL, IDXHIDIV20, IDXG30, ECONOMIC30, IDXQ30, KOMPAS100, IDX30, SRIKEHATI, LQ45
+Tags: esg-under-25, top-20-institution-selling, top-90d-transaction-value
+Affiliates: Djarum, Hartono
+
+# Research Note for BBCA.JK
+
+Ticker: BBCA.JK | PT Bank Central Asia Tbk.
+Sector: Financials | Industry: Banks | Sub-industry: Banks
+Market cap: 851245039012500 (local)
+Rank: 2 | Employees: 27937 | Listed: 2000-05-31
+Last close: 6,975 on 2026-03-10 (+1.45% d/d)
+52-week: 6,375 – 9,800 | YTD: 6,375 – 8,175 | 90d: 6,375 – 8,375
+All-time: 175 (2004-06-08) – 10,950 (2024-09-23)
+ESG: 21.44 | Indices: FTSE; IDXESGL; IDXHIDIV20; IDXG30; ECONOMIC30; IDXQ30; KOMPAS100; IDX30; SRIKEHATI; LQ45
+Tags: esg-under-25; top-20-institution-selling; top-90d-transaction-value
+Affiliates: Djarum; Hartono
+Contact: Menara BCA, Grand Indonesia, Jl. MH Thamrin No.1, Jakarta 10310 | www.bca.co.id | 021-23588000 | investor_relations@bca.co.id

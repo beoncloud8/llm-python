@@ -1,0 +1,88 @@
+# Research Note for BREN.JK
+
+Ticker: BREN.JK — PT Barito Renewables Energy Tbk.
+
+- Exchange: Indonesia Stock Exchange (IDX); Listing Board: Main
+- Sector/Sub-sector/Industry: Infrastructures / Utilities / Electric Utilities
+- Market capitalization: Rp 956,571,473,000,000 (Rank #1 on IDX)
+- Employees: 679
+- Listing date: 2023-10-09
+- Indices: KOMPAS100; LQ45
+- Affiliates: Barito; Prajogo Pangestu
+
+Contact
+- Address: Wisma Barito Pacific II, Lantai 23, Jl. Let. Jend. S. Parman Kav. 60, RT 010, RW 005, Slipi, Palmerah, Jakarta 11410, Indonesia
+- Phone: (021) 530 6711
+- Email: corpsec@baritorenewables.co.id
+- Website: www.baritorenewables.co.id
+
+Price and performance
+- Last close: IDR 7,150 (as of 2026-03-10); Daily change: -2.72%
+- Price highlights:
+  • All-time high: 12,200 (2024-05-17)
+  • All-time low: 975 (2023-10-09)
+  • 52-week high: 10,725 (2025-11-10)
+  • 52-week low: 4,170 (2025-04-09)
+  • YTD high: 9,800 (2026-01-02)
+  • YTD low: 6,800 (2026-03-09)
+  • 90-day high: 9,875 (2025-12-17)
+  • 90-day low: 6,800 (2026-03-09)
+
+Other
+- Tags: 90-d-low; public-float-under-25; top-20-institution-buying; ytd-low
+- ESG score: N/A
+# Research Note for BBCA.JK
+
+Research query: Research BBCA.JK
+
+Ticker: BBCA.JK
+Company: PT Bank Central Asia Tbk.
+Listing board: Main
+Sector: Financials | Industry: Banks | Sub-industry: Banks
+Market cap: 851245039012500 (local currency)
+Market cap rank: 2
+Employees: 27937
+Listing date: 2000-05-31
+Address: Menara BCA, Grand Indonesia; Jalan MH Thamrin No. 1; Jakarta 10310
+Website: www.bca.co.id | Phone: 021-23588000 | Email: investor_relations@bca.co.id
+
+Price and performance:
+- Last close (2026-03-10): 6,975 (+1.45% d/d)
+- 52-week range: 6,375 – 9,800
+- YTD high/low (2026): 8,175 / 6,375
+- 90-day high/low: 8,375 / 6,375
+- All-time high/low: 10,950 (2024-09-23) / 175 (2004-06-08)
+
+ESG score: 21.44
+Index memberships: FTSE, IDXESGL, IDXHIDIV20, IDXG30, ECONOMIC30, IDXQ30, KOMPAS100, IDX30, SRIKEHATI, LQ45
+Tags: esg-under-25; top-20-institution-selling; top-90d-transaction-value
+Affiliates: Djarum; Hartono
+
+Source: IDX company overview data.
+# Research Note for DSSA.JK
+
+Research Notes for DSSA.JK
+
+Dian Swastatika Sentosa Tbk (DSSA.JK)
+Sector: Energy | Sub-sector: Oil, Gas & Coal | Industry: Coal | Sub-industry: Coal Production
+Listing board: Main | Listing date: 2009-12-10
+Market cap: 597,563,324,160,000 IDR (Rank: 3)
+Employees: 1,424
+Address: Gedung Sinar Mas Land Plaza, Menara 2, Lantai 24, Jl. M.H. Thamrin No. 51, Gondangdia, Menteng, Kota Adm. Jakarta Pusat, DKI Jakarta,10350
+Website: www.dssa.co.id | Phone: 021-31990258 | Email: corsec@dss.co.id
+Affiliates: Sinarmas | Indices: JII70, KOMPAS100, LQ45
+
+Latest price data (as of 2026-03-10):
+- Last close: 77,550 IDR
+- Daily change: +5.94%
+
+Price extremes:
+- YTD high: 116,000 (2026-01-27) | YTD low: 69,125 (2026-03-09)
+- 52-week high: 118,000 (2025-10-16) | 52-week low: 36,400 (2025-04-08)
+- All-time high: 118,000 (2025-10-16) | All-time low: 165 (2009-12-10)
+
+Tags: 90-d-low, public-float-under-25, top-20-institution-buying, ytd-low
+
+Notes:
+- DSSA is part of the Sinarmas group and features in major Indonesian indices (LQ45, KOMPAS100, JII70).
+- Business focus centers on coal mining/production and broader energy activities. Consider monitoring coal price trends, regulatory developments, and group-related strategic moves.

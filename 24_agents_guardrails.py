@@ -45,7 +45,6 @@ guardrail_agent = Agent(
     output_type=LegalOrOOS,
 )
 
-
 @input_guardrail
 async def is_legal_oos_guardrail(
     context: RunContextWrapper[None], 

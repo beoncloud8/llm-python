@@ -20,8 +20,8 @@ import pandas as pd
 
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_experimental.tools import PythonAstREPLTool
 from langchain_core.output_parsers.openai_tools import JsonOutputKeyToolsParser
+from langchain_experimental.tools import PythonREPLTool
 
 
 load_dotenv()
@@ -29,12 +29,12 @@ SECTORS_API_KEY = os.getenv("SECTORS_API_KEY")
 
 df = pd.read_csv('./datasets/industry-leaders-full.csv')
 
-industry = df.loc[:, ['industry', 'sub_industry', 'total_market_cap', 'num_of_companies']]
+industry = df.loc[:, ['industry', 'sub_industry', 'total_market_cap', 'employees']]
 
-python_repl = PythonAstREPLTool(locals={"df": industry})
+python_repl = PythonREPLTool(locals={"df": industry})
 
 llm = ChatGroq(
-    model_name="llama3-70b-8192"
+    model_name="llama-3.3-70b-versatile"
 )
 
 system_prompt = f""" Here is the output of `df.head().to_markdown()`: \\

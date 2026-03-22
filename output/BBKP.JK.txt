@@ -1,0 +1,48 @@
+# Research Note for BBKP.JK
+
+Company: PT Bank KB Indonesia Tbk (BBKP.JK)
+Exchange/Board: IDX — Development
+Sector/Industry: Financials — Banks
+Market Cap: IDR 11,892,472,630,528 (Rank: 153)
+Headquarters: Gedung KB Bank, Jl. MT. Haryono Kav. 50-51, Jakarta 12770
+Employees: 1,363
+Listing Date: 2006-07-10
+Website: www.kbbank.co.id
+Phone: 021-798 8266
+Emails: investor.relations@kbbank.co.id; corsec@kbbank.co.id
+
+Latest Trading
+- Last Close: IDR 64 on 2026-03-10 (+3.23% d/d)
+
+Price History
+- YTD High/Low (2026): 98 (2026-01-15) / 60 (2026-03-09)
+- 52-Week High/Low: 99 (2025-08-26) / 50 (2025-03-12)
+- 90-Day High/Low: 98 (2026-01-15) / 60 (2026-03-09)
+- All-Time High/Low: 705 (2013-05-10) / 50 (2024-06-03)
+
+Other
+- Tags: 90-d-low; public-float-under-25; top-90d-transaction-volume; ytd-low
+- ESG Score: N/A
+- Indices: N/A
+- Affiliates: N/A
+# Research Note for BBKP.JK
+
+Company: PT Bank KB Indonesia Tbk (BBKP.JK)
+Exchange: IDX — Listing board: Development
+Sector: Financials — Industry: Banks
+Market cap: IDR 11,892,472,630,528
+Employees: 1,363
+Headquarters: Gedung KB Bank, Jl. MT. Haryono Kav. 50-51, Jakarta 12770
+Website: www.kbbank.co.id
+Investor Relations: investor.relations@kbbank.co.id; corsec@kbbank.co.id
+Phone: 021-798 8266
+Listing date: 2006-07-10
+
+Latest close: IDR 64 (2026-03-10), daily change: +3.23%
+Price ranges:
+- 90D high/low: 98 / 60
+- 52W high/low: 99 / 50
+- YTD high/low: 98 / 60
+- All-time high/low: 705 (2013-05-10) / 50 (2024-06-03)
+
+Notes/Tags: 90-d-low; public-float-under-25; top-90d-transaction-volume; ytd-low

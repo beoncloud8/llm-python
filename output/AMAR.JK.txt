@@ -1,0 +1,58 @@
+# Research Note for AMAR.JK
+
+Company: PT Bank Amar Indonesia Tbk. (AMAR.JK)
+Exchange/Country: IDX / Indonesia
+Listing board: Development
+Sector: Financials
+Industry: Banks (Sub-industry: Banks)
+
+Market capitalization: IDR 3,548,470,333,200
+Market cap rank (IDX): 285
+Employees: 242
+Address: RDTX Square Lt.11, Jl. Prof. DR. Satrio No.164, RT.4/RW.4, Karet Semanggi, Setiabudi, Kota Jakarta Selatan 12930
+Listing date: 2020-01-09
+Website: www.amarbank.co.id
+Phone: (021) 3021-0700
+Email: corsec@amarbank.co.id
+
+Latest close price: IDR 195 (as of 2026-03-10)
+Daily close change: +1.56%
+
+Price range highlights:
+- YTD low/high: 182 (2026-03-09) / 266 (2026-01-06)
+- 52-week low/high: 154 (2025-03-17) / 302 (2025-10-10)
+- 90-day low/high: 182 (2026-03-09) / 266 (2026-01-06)
+- All-time low/high: 145 (2020-04-23) / 787 (2022-01-19)
+
+ESG score: N/A
+Tags: 90-d-low; dividend-yield-ttm-above-5-percent; public-float-under-25; single-entity-holding-70; ytd-low
+Indices: None
+Affiliates: None
+
+Notes:
+- Market data and price statistics are as reported by the exchange and may be subject to revision.
+- This overview is for research purposes and is not investment advice.
+# Research Note for AMAR.JK
+
+Company: PT Bank Amar Indonesia Tbk (AMAR.JK)
+Exchange/Country: Indonesia (IDX)
+Sector: Financials | Industry: Banks | Sub-industry: Banks | Sub-sector: Banks
+Listing board: Development
+Market capitalization: IDR 3,548,470,333,200 (rank 285)
+Address: RDTX Square Lt.11, Jl. Prof. DR. Satrio No.164, RT.4/RW.4, Karet Semanggi, Setiabudi, Kota Jakarta Selatan 12930
+Employees: 242
+Listing date: 2020-01-09
+Website: www.amarbank.co.id
+Phone: (021) 3021-0700
+Email: corsec@amarbank.co.id
+
+Latest close: IDR 195 on 2026-03-10 (daily change: +1.56%)
+
+Price extremes:
+- YTD: Low 182 (2026-03-09) | High 266 (2026-01-06)
+- 52-week: Low 154 (2025-03-17) | High 302 (2025-10-10)
+- 90-day: Low 182 (2026-03-09) | High 266 (2026-01-06)
+- All-time: Low 145 (2020-04-23) | High 787 (2022-01-19)
+
+Tags: 90-d-low; dividend-yield-ttm-above-5-percent; public-float-under-25; single-entity-holding-70; ytd-low
+ESG score: N/A

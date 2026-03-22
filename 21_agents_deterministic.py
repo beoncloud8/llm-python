@@ -83,7 +83,7 @@ determine_companies_to_research = Agent(
 
 company_research_agent = Agent(
     name="company_research_agent",
-    instructions="Research each company of a given list using the assigned tool, always assume indonesian companies unless otherwise specified.",
+    instructions="Research each company of a given list using the assigned tool, always assume indonesian companies unless otherwise specified. Concise your output in 200 words",
     tools=[get_company_overview],
     output_type=str
 )
@@ -93,25 +93,38 @@ async def main():
     input_prompt = input(f"🤖: What kind of companies are you interested in? \n👧: ")
     # Ensure the entire workflow is a single trace
     with trace("Deterministic research flow"):
-        # 1. Determine the companies ranked by certain dimension
-        top_companies_ranked = await Runner.run(
-            get_top_companies_based_on_metric,
-            input_prompt
-        )
-        print("🤖:", top_companies_ranked.final_output)
 
+        # Check if query contains financial metrics to decide if we need to get ranked companies
+        financial_metrics = ["market_cap", "dividend_yield", "total_dividend", "revenue", "earnings", "pb", "pe", "ps"]
+        has_metric = any(metric in input_prompt.lower() for metric in financial_metrics)
+        
+        if has_metric:
+            # 2. Get top companies based on the specific metric
+            top_companies_result = await Runner.run(
+                get_top_companies_based_on_metric,
+                input_prompt
+            )
+            print("🤖:", top_companies_result.final_output)
+            tickers_list = top_companies_result.final_output
+        else:
+            companies_to_research = await Runner.run(
+                determine_companies_to_research,
+                input_prompt
+            )
+            # Use the tickers from determine_companies_to_research
+            print("🤖:", companies_to_research.final_output.tickers)
+            tickers_list = companies_to_research.final_output.tickers
 
-        # 2. Add a gate to stop if the tickers are not valid
-        assert isinstance(
-            top_companies_ranked.final_output, list), "Invalid tickers"
+        # 3. Add a gate to stop if the tickers are not valid
+        assert isinstance(tickers_list, list), "Invalid tickers"
 
-        # 3. Research the company based on the query
-        # 3.1 Append to Notes
+        # 4. Research the company based on the query
+        # 4.1 Append to Notes
         with open("3_research_notes.txt", "a") as f:
             f.write(f"Research on {input_prompt}:\n")
-            f.write(f"Top companies: {top_companies_ranked.final_output}\n\n\n")
+            f.write(f"Top companies: {tickers_list}\n\n\n")
 
-            for ticker in top_companies_ranked.final_output:
+            for ticker in tickers_list:
                 print(f"🤖: Getting information on: {ticker}")
                 company_research_result = await Runner.run(
                     company_research_agent,

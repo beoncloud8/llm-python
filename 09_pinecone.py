@@ -8,17 +8,19 @@ import requests
 from bs4 import BeautifulSoup
 
 import pinecone
-from llama_index import (
+from pinecone import Pinecone, ServerlessSpec
+
+# Initialize Pinecone once at module level
+pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
+
+from llama_index.core import (
     SimpleDirectoryReader,
-    LLMPredictor,
-    ServiceContext,
-    GPTVectorStoreIndex,
-    QuestionAnswerPrompt,
-    PineconeReader
+    VectorStoreIndex,
+    PromptTemplate
 )
-from llama_index.vector_stores import PineconeVectorStore
-from llama_index.storage.storage_context import StorageContext
-from langchain.chat_models import ChatOpenAI
+from llama_index.llms.openai import OpenAI
+from llama_index.vector_stores.pinecone import PineconeVectorStore
+from llama_index.core.storage.storage_context import StorageContext
 
 # reader = PineconeReader(
 #     api_key=os.getenv("PINECONE_API_KEY"),
@@ -48,9 +50,10 @@ def scrape_book(urls):
 
         for i in text:
             try:
-                result.append(i.encode('latin').decode("utf-8"))
-            except:
-                pass
+                result.append(i.encode('latin-1').decode("utf-8"))
+            except (UnicodeEncodeError, UnicodeDecodeError) as e:
+                print(f"Encoding error for text: {e}")
+                result.append(i)  # Use original text as fallback
 
         book_path = Path("book")
         if not book_path.exists():
@@ -58,7 +61,7 @@ def scrape_book(urls):
 
         pagename = url.split("/")[-1]
 
-        with open(book_path / f"{pagename}.txt", "w") as f:
+        with open(book_path / f"{pagename}.txt", "w", encoding="utf-8") as f:
             f.write("\n".join(result))
 
 def create_pages(urls):
@@ -79,24 +82,26 @@ def build_docs(pages):
     return docs
 
 def build_context(model_name):
-    llm_predictor = LLMPredictor(
-        llm=ChatOpenAI(temperature=0, model_name=model_name)
-    )
-    return ServiceContext.from_defaults(llm_predictor=llm_predictor)
+    return OpenAI(model=model_name, temperature=0)
 
 def build_index(pages, docs):
 
     page_indices = {}
-    pinecone.init(
-        api_key=os.getenv("PINECONE_API_KEY"),
-        environment="us-west4-gcp"
-    )
 
     # create a Pinecone index if you don't have one
     # https://openai.com/blog/new-and-improved-embedding-model (12288 -> 1536 dimensions)
-    # pinecone.create_index("nietzsche", dimension=1536, metric="cosine")
+    if "nietzsche" not in [index.name for index in pc.list_indexes()]:
+        pc.create_index(
+            name="nietzsche", 
+            dimension=1536, 
+            metric="cosine",
+            spec=ServerlessSpec(
+                cloud='aws',
+                region='us-east-1'
+            )
+        )
     
-    pinecone_index = pinecone.Index("nietzsche")
+    pinecone_index = pc.Index("nietzsche")
 
     # pinecone_index.upsert("nietzsche_wandere", [1,2,3])
     # pinecone_index.describe_index_stats()
@@ -111,7 +116,7 @@ def build_index(pages, docs):
             metadata_filters={"page": page}
         )
         storage_context = StorageContext.from_defaults(vector_store=vector_store)
-        page_indices[page] = GPTVectorStoreIndex.from_documents(
+        page_indices[page] = VectorStoreIndex.from_documents(
             docs[page], storage_context=storage_context, service_context=service_context
         )
         page_indices[page].index_struct.index_id = page
@@ -125,9 +130,9 @@ if __name__ == "__main__":
     # assuming books have already been downloaded into your local directory
     pages = create_pages(urls)
     docs = build_docs(pages)
-    # print(docs.keys())
     indices = build_index(pages, docs)
 
+    # Example query (uncomment to use)
     # response = indices["wande002.html"].as_query_engine().query(
     #     "What are Nietzsche's view on religion? Answer in the original German text, and provide an English translation for the answer"
     # )
@@ -140,7 +145,7 @@ if __name__ == "__main__":
         "Answer the following question in the original German text, and provide an english translation and explanation in as instructive and educational way as possible: {query_str} \n"
     )
 
-    QA_PROMPT = QuestionAnswerPrompt(PROMPT_TEMPLATE)
+    QA_PROMPT = PromptTemplate(PROMPT_TEMPLATE)
     query_engine = indices["wande002.html"].as_query_engine(text_qa_template=QA_PROMPT)
     response = query_engine.query("What are important things according to Nietzsche?")
 

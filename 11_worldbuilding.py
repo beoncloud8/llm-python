@@ -4,16 +4,16 @@ from PIL import Image
 from dotenv import load_dotenv
 import pandas as pd
 import cohere
-from stability_sdk import client
+# from stability_sdk import client
 
 
 load_dotenv()
 
 co = cohere.Client(os.getenv("COHERE_API_KEY"))
-stability = client.StabilityInference(
-    key=os.getenv("STABILITY_API_KEY"),
-    verbose=True
-)
+# stability = client.StabilityInference(
+#     key=os.getenv("STABILITY_API_KEY"),
+#     verbose=True
+# )
 
 # predicted = co.generate(prompt="Civilization is a video game", 
 #                         num_generations=5,
@@ -84,31 +84,19 @@ storyConfig = {
 }
 
 
-def generate(prompt, model="base", num_generations=5, temperature=0.7, max_tokens=64):
-    predictions = co.generate(
-        prompt=prompt,
+def generate(prompt, model="command-a-03-2025", num_generations=5, temperature=0.7, max_tokens=64):
+    response = co.chat(
+        message=prompt,
         model=model,
-        num_generations=num_generations,
         temperature=temperature,
         max_tokens=max_tokens,
-        return_likelihoods="GENERATION",
-        stop_sequences=["\n"]
     )
-
-    generations = {}
-
-    for generation in predictions.generations:
-
-        text = generation.text.replace("\n", "")
-
-        generations[text] = 0
-
-        for tl in generation.token_likelihoods:
-            generations[text] += tl.likelihood
-
-    # turn this into a dataframe
+    
+    # For multiple generations, we'd need to make multiple calls
+    # For now, returning single response
+    generations = {response.text: 1.0}
+    
     df = pd.DataFrame.from_dict(generations, orient="index", columns=["likelihood"])
-    df = df.sort_values(by=["likelihood"], ascending=False)
     return df
 
 def generate_img(prompt):
@@ -136,27 +124,28 @@ if __name__ == "__main__":
     # leader_img.show()
 
     civs = generate(storyConfig["civLocationPrompt"])
-
-    # for civ in civs[:3]:
-    #     civName, civDescription = civs.name.split("|")
-    #     civImg = generate_img(f"{storyConfig['civStyle']}{civDescription}")
-    #     civImg.show()
-
-    civname, civdescription = civs.iloc[3].name.split("| Description: ")
-    civname2, civdescription2 = civs.iloc[4].name.split("| Description: ")
-    ally1 = leaders.iloc[2].name.split("|")[0].strip()
+    print("Generated civs:")
+    print(civs)
+    
+    # Use the generated text directly since format may vary
+    civ_text = civs.iloc[0].name
+    civname = "Generated Civilization"
+    civdescription = civ_text
+    
+    leader_text = leaders.iloc[0].name
+    ally1 = leader_text.split("|")[0].strip() if "|" in leader_text else "Generated Leader"
 
     cutscenes_prompt = storyConfig["inGameCutScenes"].format(
         civ=civname,
         civ_description=civdescription,
-        civ2=civname2,
-        civ2_description=civdescription2,
+        civ2=civname,
+        civ2_description=civdescription,
         ally1=ally1
     )
 
     cutscenes = generate(
         cutscenes_prompt,
-        model="command-nightly",
+        model="command-a-03-2025",
         num_generations=3,
         max_tokens=800,
         temperature=0.9,
@@ -166,6 +155,6 @@ if __name__ == "__main__":
     print(dialog)
 
     # generate img for that cutscene
-    cutscene_img = generate_img(
-        f"An in-game, sci-fi cutscene with lots of details for: {cutscenes.iloc[0].name}"
-    )
+    # cutscene_img = generate_img(
+    #     f"An in-game, sci-fi cutscene with lots of details for: {cutscenes.iloc[0].name}"
+    # )

@@ -1,0 +1,21 @@
+id,name,email,country,role,device,hear_about_us,response_date
+1,John Student,john@student.edu,USA,Student,iPhone,Social Media,2024-01-15
+2,Jane Professional,jane@company.com,Canada,Professional,MacBook,Google,2024-01-16
+3,Bob Student,bob@university.edu,UK,Student,Android,Friend,2024-01-17
+4,Alice Professional,alice@tech.com,USA,Professional,iPad,Social Media,2024-01-18
+5,Charlie Student,charlie@college.edu,Australia,Student,iPhone,Google,2024-01-19
+6,Diana Professional,diana@business.com,Canada,Professional,Windows,Friend,2024-01-20
+7,Eve Student,eve@school.edu,UK,Student,Android,Social Media,2024-01-21
+8,Frank Professional,frank@corp.com,USA,Professional,MacBook,Google,2024-01-22
+9,Grace Student,grace@academy.edu,Australia,Student,iPhone,Friend,2024-01-23
+10,Henry Professional,henry@enterprise.com,Canada,Professional,Windows,Social Media,2024-01-24
+11,Iris Student,iris@university.edu,UK,Student,Android,Google,2024-01-25
+12,Jack Professional,jack@tech.com,USA,Professional,iPad,Friend,2024-01-26
+13,Kate Student,kate@college.edu,Australia,Student,iPhone,Social Media,2024-01-27
+14,Liam Professional,liam@business.com,Canada,Professional,MacBook,Google,2024-01-28
+15,Maya Student,maya@school.edu,UK,Student,Android,Friend,2024-01-29
+16,Noah Professional,noah@corp.com,USA,Professional,Windows,Social Media,2024-01-30
+17,Olivia Student,olivia@academy.edu,Australia,Student,iPhone,Google,2024-01-31
+18,Peter Professional,peter@enterprise.com,Canada,Professional,iPad,Friend,2024-02-01
+19,Quinn Student,quinn@university.edu,UK,Student,Android,Social Media,2024-02-02
+20,Rachel Professional,rachel@tech.com,USA,Professional,MacBook,Google,2024-02-03

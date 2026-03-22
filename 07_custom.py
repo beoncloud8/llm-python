@@ -20,9 +20,7 @@ from llama_index import (
 )
 from transformers import pipeline
 
-# load_dotenv()
-os.environ["OPENAI_API_KEY"] = "random"
-
+load_dotenv()
 
 def timeit():
     """
