@@ -1,0 +1,94 @@
+COMPARATIVE ANALYSIS - BREN, ADRO
+============================================================
+Generated: 2026-03-31 21:35:09
+
+### Comprehensive Comparison of PT Barito Renewables Energy (BREN) and Alamtri Resources Indonesia (ADRO)
+
+#### 1. Financial Performance Comparison
+
+- **BREN Financial Metrics (2023)**
+  - Revenue: IDR 9.19 trillion
+  - Earnings: IDR 1.66 trillion
+  - EBITDA: IDR 7.75 trillion
+  - Total Assets: IDR 54.17 trillion
+  - Total Equity: IDR 10.04 trillion
+  - Net Profit Margin: 18.06%
+  - Return on Assets (ROA): 3.06%
+  - Return on Equity (ROE): 16.52%
+
+- **ADRO Financial Metrics (2022)**
+  - Revenue: IDR 126.33 trillion
+  - Earnings: IDR 38.87 trillion
+  - EBITDA: IDR 70.44 trillion
+  - Net Profit Margin: 30.77%
+  - Return on Assets (ROA): Higher than BREN but not specified
+  - Return on Equity (ROE): Higher than BREN but not specified
+  
+**Comparison Insights:**  
+ADRO shows significantly higher revenue and net profit margin compared to BREN, aligning with its focus on coal production and mining services. However, BREN has a higher growth potential in the renewable energy sector, which is increasingly gaining attention.
+
+#### 2. Revenue Structure Differences
+
+- **BREN (2024 Projections)**
+  - Sales of Electricity: IDR 4.5 trillion
+  - Sales of Steam: IDR 1.97 trillion
+  - Other Revenue (Leases, Fees): IDR 3.67 trillion (combined total from operating leases, finance leases, and management fees)
+
+- **ADRO (2024 Projections)**
+  - Sales of Coal: IDR 18.61 trillion
+  - Mining Services: IDR 13.71 trillion
+
+**Comparison Insights:**  
+BREN has a diverse revenue stream, emphasizing renewable energy. In contrast, ADRO is heavily reliant on coal, making it vulnerable to fluctuations in coal prices and changing regulations around fossil fuels. 
+
+#### 3. Growth Trends and Prospects
+
+- **BREN:**
+  - Projected revenue growth of 15.9% YoY for 2024, indicating strong potential for expansion, especially in renewable energy investments.
+
+- **ADRO:**
+  - Experienced robust growth in 2022, but showed a significant decline in both EPS and revenue trends for 2023; forecasts for 2024 and 2025 are also challenging, indicating struggles ahead.
+
+**Comparison Insights:**  
+BREN’s focus on renewables aligns with global energy shifts, suggesting greater long-term potential. ADRO faces near-term headwinds, as evidenced by declining EPS and revenue.
+
+#### 4. Investment Considerations and Risks
+
+- **BREN:**
+  - **Pros:** Strong growth in a sustainable energy market, diversified revenue sources.
+  - **Cons:** High debt-to-equity ratio (4.39), which poses financial risk during expansion phases.
+
+- **ADRO:**
+  - **Pros:** Strong profitability metrics, established market presence.
+  - **Cons:** Dependency on coal exposes it to environmental regulations and market volatility.
+
+**Comparison Insights:**  
+Investors in BREN need to weigh high leverage against the promising renewable sector. Investors in ADRO must consider the sustainability of current profits versus potential regulatory risks.
+
+#### 5. Relative Strengths and Weaknesses
+
+- **Strengths:**
+  - **BREN:** 
+    - Diversification into renewable energy, solid profit margins.
+    - Growth potential in the energy sector.
+  - **ADRO:** 
+    - Established market position, higher immediate profitability metrics.
+
+- **Weaknesses:**
+  - **BREN:** 
+    - Relatively small size and market share compared to ADRO, high leverage.
+  - **ADRO:** 
+    - Declining performance indicators for 2023, reliance on fossil fuels which face future challenges.
+
+#### 6. Ranking and Recommendation Summary
+
+1. **PT Barito Renewables Energy (BREN)**
+   - **Recommendation:** Strong buy for investors favoring sustainable, long-term growth despite high leverage.
+2. **Alamtri Resources Indonesia (ADRO)**
+   - **Recommendation:** Hold, as its established revenues and profits are attractive but face potential future risks with declining growth trends.
+
+---
+
+### Conclusion
+
+While both companies operate in different segments of the energy industry, BREN presents a more favorable investment opportunity for those inclined toward future-oriented growth in renewables. In contrast, ADRO's strong current performance is mitigated by potential long-term risks associated with its coal dependency. Investors should prioritize strategies aligned with risk tolerance, market perspectives, and future energy trends when making decisions.

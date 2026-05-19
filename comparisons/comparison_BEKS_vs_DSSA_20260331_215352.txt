@@ -1,0 +1,83 @@
+COMPARATIVE ANALYSIS - BEKS, DSSA
+============================================================
+Generated: 2026-03-31 21:53:52
+
+### Comprehensive Comparison of PT Bank Pembanguanan Daerah Banten Tbk (BEKS) and Dian Swastatika Sentosa Tbk (DSSA)
+
+#### 1. Financial Performance Comparison
+- **BEKS (PT Bank Pembanguanan Daerah Banten Tbk)**
+  - **2023 Revenue**: IDR 272.19 billion
+  - **2023 Net Income**: IDR 26.59 billion
+  - **EPS**: IDR 0.52
+  - **Return on Assets (ROA)**: 0.39%
+  - **Return on Equity (ROE)**: 1.59%
+  - **Net Profit Margin**: 9.77%
+
+- **DSSA (Dian Swastatika Sentosa Tbk)**
+  - **2023 Revenue**: IDR 77.42 trillion
+  - **2023 Net Income**: IDR 6.58 trillion
+  - **EPS**: IDR 853.90
+  - **ROA**: 13.91%
+  - **ROE**: 24.77%
+  - **Net Profit Margin**: 8.50%
+
+**Summary**: DSSA significantly outperforms BEKS in terms of revenue, net income, EPS, ROA, and ROE, indicating a stronger financial position.
+
+#### 2. Revenue Structure Differences
+- **BEKS**:
+  - Primarily generates revenue from interest income.
+  - Diverse income sources include loans and securities, but growth is limited due to competitive pressures.
+
+- **DSSA**:
+  - Revenue is primarily driven by the coal mining sector, contributing approximately 92.8% of total revenue, along with technology and renewable energy segments.
+  - High dependency on commodity prices indicates vulnerability to market conditions.
+
+**Summary**: DSSA has a broader revenue base and is more diversified compared to BEKS, which is primarily focused on banking.
+
+#### 3. Growth Trends and Prospects
+- **BEKS**:
+  - Forecasted revenue growth of IDR 284.94 billion in 2025.
+  - Performance shows recovery from losses to profitability but remains lower compared to peers with lower growth prospects.
+  - Improvement focus on interest income.
+
+- **DSSA**:
+  - Recent quarterly revenue growth of 3.09%.
+  - Historical EPS growth shows volatility, reflecting market responsiveness; however, over the years, the coal sector has shown strong demand, and expanded diversification could enhance stability.
+  
+**Summary**: DSSA provides a more favorable growth outlook owing to market demand for coal, while BEKS faces challenges in the banking sector recovery.
+
+#### 4. Investment Considerations and Risks
+- **BEKS**:
+  - **Strengths**: Established banking relationships, government backing.
+  - **Weaknesses**: High debt ratios, slow recovery from previous losses, low interest margins.
+  - **Risks**: Vulnerability to economic downturns affecting interest income.
+
+- **DSSA**:
+  - **Strengths**: Strong revenue generation from coal and diversified services.
+  - **Weaknesses**: High dependence on commodity prices can affect profitability.
+  - **Risks**: Environmental regulations and commodity price fluctuations pose risks.
+
+**Summary**: While BEKS has potential for recovery, DSSA's established revenue streams may provide a more stable investment, albeit with commodity-related risks. 
+
+#### 5. Relative Strengths and Weaknesses
+- **BEKS**:
+  - **Strengths**: Banking infrastructure, local market knowledge.
+  - **Weaknesses**: Poor profitability indicators, high debt levels.
+
+- **DSSA**:
+  - **Strengths**: Solid profitability ratios, higher growth potential, diversified sectors.
+  - **Weaknesses**: Revenue dependence on coal market, volatility in earnings.
+
+**Summary**: DSSA exhibits stronger financial strength and growth prospects compared to BEKS, which faces ongoing profitability issues.
+
+#### 6. Ranking and Recommendation Summary
+**Investment Ranking**:
+1. **Dian Swastatika Sentosa Tbk (DSSA)** - Strong financial performance, growth prospects, and profitability metrics make it a more attractive investment.
+2. **PT Bank Pembanguanan Daerah Banten Tbk (BEKS)** - Limited recovery potential and financial instability position it as a less favored investment option.
+
+**Actionable Insights**:
+- **Investors should consider DSSA** for its stronger market positioning and profitability indicators in the diversified sectors of coal and technology.
+- **Monitor commodity price trends** in the coal sector, as it significantly impacts DSSA's earnings.
+- **Address BEKS's strategic improvements** in operational efficiency and interest income, but approach with caution due to current financial performance.
+
+In conclusion, consider DSSA as the primary investment, and research initiatives to rectify BEKS’s financial trajectory for potential long-term gains.
